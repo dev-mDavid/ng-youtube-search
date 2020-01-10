@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'protractor';
+import { YoutubeSearchService } from '../youtube-search.service';
 
 @Component({
   selector: 'app-search-box',
@@ -6,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
+  @Output() loading: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() results: EventEmitter<SearchResult[]> = new EventEmitter<SearchResult[]>();
 
-  constructor() { }
+  constructor(
+              private youtube: YoutubeSearchService,
+              private el: ElementRef
+              ) { 
+  }
 
   ngOnInit() {
   }
