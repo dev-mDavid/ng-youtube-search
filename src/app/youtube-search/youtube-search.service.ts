@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class YoutubeSearchService {
-
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+    @Inject(YOUTUBE_API_KEY) private apiKey: string,
+    @Inject(YOUTUBE_API_KEY) private apiUrl: string
+  ) { }
 }
