@@ -1,7 +1,7 @@
-import { SearchResult.Model } from './search-result.model';
+import { SearchResult } from './search-result.model';
 
-describe('SearchResult.Model', () => {
+describe('SearchResult', () => {
   it('should create an instance', () => {
-    expect(new SearchResult.Model()).toBeTruthy();
+    expect(new SearchResult()).toBeTruthy();
   });
 });
