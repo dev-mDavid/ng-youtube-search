@@ -1,7 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { SearchResult } from './search-result.model';
 
+export const YOUTUBE_API_KEY =
+  'AIzaSyDOfT_BO81aEZScosfTYMruJobmpjqNeEk';
+export const YOUTUBE_API_URL =
+  'https://www.googleapis.com/youtube/v3/search';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +21,7 @@ export class YoutubeSearchService {
   search(query: string): Observable<SearchResult[]> {
     const params: string = [
       `q=${query}`,
-      `key=${this.apiKey}`
+      `key=${this.apiKey}`,
       `part=snippent`,
       `type=video`,
       `maxResults=10`
