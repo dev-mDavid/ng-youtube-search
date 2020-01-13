@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { YoutubeInjectables } from './youtube-search/youtube-injectables';
 import { SearchBoxComponent } from './youtube-search/search-box/search-box.component';
-import { SearchResultComponent } from './search-result/search-result.component';
+import { SearchResultComponent } from './youtube-search/search-result/search-result.component';
 
 @NgModule({
   declarations: [
