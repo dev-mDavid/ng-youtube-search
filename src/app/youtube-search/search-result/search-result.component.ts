@@ -1,7 +1,6 @@
 import { 
   Component, 
-  OnInit,
-  Input
+  OnInit
 } from '@angular/core';
 import { SearchResult } from "../search-result.model";
 @Component({
@@ -10,11 +9,14 @@ import { SearchResult } from "../search-result.model";
   styleUrls: ['./search-result.component.css']
 })
 export class SearchResultComponent implements OnInit {
+  results: SearchResult[];
+  loading: boolean;
 
   constructor() { }
-  @Input() result: SearchResult;
+  ngOnInit() { }
 
-  ngOnInit() {
+  updateResults(results: SearchResult[]): void {
+    this.results = results;
   }
 
 }
